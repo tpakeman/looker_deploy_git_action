@@ -1,0 +1,33 @@
+2022-03-25 17:32:04,849 - Github Looker Auto Deploy - INFO - Successfully authed into Looker SDK with base_url https://sandbox.looker.tompakemandev.net/
+2022-03-25 17:32:04,850 - Github Looker Auto Deploy - INFO - Successfully authed into Looker SDK with base_url https://sandbox.looker.tompakeman.net/
+2022-03-25 17:32:05,400 - Github Looker Auto Deploy - INFO - Found 2 LookML dashboards in instance 1
+2022-03-25 17:32:06,136 - Github Looker Auto Deploy - INFO - Found 2 LookML dashboards in instance 2
+2022-03-25 17:32:06,137 - Github Looker Auto Deploy - INFO - Found 1 new LookML dashboards in instance 1
+2022-03-25 17:32:06,969 - Github Looker Auto Deploy - INFO - Production mode for ci_cd updated to use ref "prod"
+2022-03-25 17:32:07,182 - Github Looker Auto Deploy - ERROR - Failed to move new LookML dashboard ci_cd::test_lookml_dash_2 into folder 13:
+{"message":"Validation Failed","errors":[{"field":"dashboard_id","code":"missing","message":"dashboard not found for dashboard_id","documentation_url":"http://docs.looker.com/"}],"documentation_url":"http://docs.looker.com/"}
+2022-03-25 17:32:07,183 - Github Looker Auto Deploy - INFO - Did not move any dashboards
+2022-03-25 17:32:47,561 - Github Looker Auto Deploy - INFO - Successfully authed into Looker SDK with base_url https://sandbox.looker.tompakemandev.net/
+2022-03-25 17:32:47,561 - Github Looker Auto Deploy - INFO - Successfully authed into Looker SDK with base_url https://sandbox.looker.tompakeman.net/
+2022-03-25 17:32:48,075 - Github Looker Auto Deploy - INFO - Found 2 LookML dashboards in instance 1
+2022-03-25 17:32:49,157 - Github Looker Auto Deploy - INFO - Found 2 LookML dashboards in instance 2
+2022-03-25 17:32:49,158 - Github Looker Auto Deploy - INFO - Found 1 new LookML dashboards in instance 1
+2022-03-25 17:32:50,009 - Github Looker Auto Deploy - INFO - Production mode for ci_cd updated to use ref "prod"
+2022-03-25 17:32:50,214 - Github Looker Auto Deploy - ERROR - Failed to move new LookML dashboard ci_cd::test_lookml_dash_2 into folder 13:
+{"message":"Validation Failed","errors":[{"field":"dashboard_id","code":"missing","message":"dashboard not found for dashboard_id","documentation_url":"http://docs.looker.com/"}],"documentation_url":"http://docs.looker.com/"}
+2022-03-25 17:32:50,215 - Github Looker Auto Deploy - INFO - Did not move any dashboards
+2022-03-25 17:39:19,403 - Github Looker Auto Deploy - INFO - Successfully authed into Looker SDK with base_url https://sandbox.looker.tompakemandev.net/
+2022-03-25 17:39:19,404 - Github Looker Auto Deploy - INFO - Successfully authed into Looker SDK with base_url https://sandbox.looker.tompakeman.net/
+2022-03-25 17:39:19,953 - Github Looker Auto Deploy - INFO - Found 2 LookML dashboards in instance 1
+2022-03-25 17:39:20,725 - Github Looker Auto Deploy - INFO - Found 2 LookML dashboards in instance 2
+2022-03-25 17:39:20,725 - Github Looker Auto Deploy - INFO - Found 1 existing dashboards in instance 2 not in target folder
+2022-03-25 17:39:21,911 - Github Looker Auto Deploy - INFO - Production mode for ci_cd updated to use ref "prod"
+2022-03-25 17:39:21,912 - Github Looker Auto Deploy - INFO - Did not move any dashboards
+2022-03-25 17:39:30,846 - Github Looker Auto Deploy - INFO - Successfully authed into Looker SDK with base_url https://sandbox.looker.tompakemandev.net/
+2022-03-25 17:39:30,846 - Github Looker Auto Deploy - INFO - Successfully authed into Looker SDK with base_url https://sandbox.looker.tompakeman.net/
+2022-03-25 17:39:31,310 - Github Looker Auto Deploy - INFO - Found 2 LookML dashboards in instance 1
+2022-03-25 17:39:31,919 - Github Looker Auto Deploy - INFO - Found 2 LookML dashboards in instance 2
+2022-03-25 17:39:31,919 - Github Looker Auto Deploy - INFO - Found 1 existing dashboards in instance 2 not in target folder
+2022-03-25 17:39:32,653 - Github Looker Auto Deploy - INFO - Production mode for ci_cd updated to use ref "prod"
+2022-03-25 17:39:33,084 - Github Looker Auto Deploy - INFO - Successfully moved existing LookML dashboard ci_cd::test_lookml_dash_4 from folder lookml into folder 13
+2022-03-25 17:39:33,085 - Github Looker Auto Deploy - INFO - Successfully moved 1 dashboards

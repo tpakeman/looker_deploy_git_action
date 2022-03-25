@@ -100,7 +100,7 @@ def update_lookml_dashboards(diff: Dict, client: Looker40SDK, args: argparse.Nam
             moved += 1
             logger.info(f'Successfully moved new LookML dashboard {d} into folder {args.lookml_folder}')
         except Exception as e:
-            logger.error(f'Failed to move new LookML dashboard {d} into folder {args.lookml_folder}')
+            logger.error(f'Failed to move new LookML dashboard {d} into folder {args.lookml_folder}:\n{e}')
     if args.handle_moved_dashboards:
         for d in diff['not_in_target']:
             try:
