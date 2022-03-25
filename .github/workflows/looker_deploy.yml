@@ -1,0 +1,36 @@
+name: py
+
+on:
+  pull_request:
+    branches: [ prod ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      # - name: rename dev model # mv {dev_model_name} {prod_model_name} # only required for single instance
+        # uses: 
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 #install the python needed
+      - name: Install dependencies
+        run: |
+            python -m pip install --upgrade pip
+            pip install looker_sdk==22.4.0
+      - name: execute py script # run the run.py to get the latest data
+        run: |
+          python .github/workflows/looker_deploy.py \
+          --project_id ci_cd \
+          --release_branch prod \
+          --looker_sdk_1 ${{ secrets.LOOKER_CLIENT_ID_1 }} \
+          ${{ secrets.LOOKER_CLIENT_SECRET_1 }} \
+          ${{ secrets.LOOKER_BASE_URL_1 }} \
+          --looker_sdk_2 ${{ secrets.LOOKER_CLIENT_ID_2 }} \
+          ${{ secrets.LOOKER_CLIENT_SECRET_2 }} \
+          ${{ secrets.LOOKER_BASE_URL_2 }} \
+          --lookml_folder 13
+        # --handle_moved_dashboards
