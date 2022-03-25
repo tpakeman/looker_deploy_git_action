@@ -1,12 +1,7 @@
 from typing import Dict, Tuple
-import looker_sdk, logging, argparse, os
-from datetime import datetime
+import looker_sdk, logging, argparse
 from looker_sdk.sdk.api40.methods import Looker40SDK
-from looker_sdk.sdk.api40.models import WriteUserAttributeWithValue
 from looker_sdk.rtl import api_settings
-from looker_sdk.error import SDKError
-
-DEBUG = True
 
 # Set up Logging
 logger = logging.getLogger('Github Looker Auto Deploy')
@@ -17,11 +12,11 @@ fh = logging.FileHandler('looker_deploy.log')
 fh.setFormatter(log_format)
 logger.addHandler(fh)
 
-if DEBUG:
-    log_format_simple = logging.Formatter("%(levelname)s - %(message)s")
-    sh = logging.StreamHandler()
-    sh.setFormatter(log_format_simple)
-    logger.addHandler(sh)
+log_format_simple = logging.Formatter("%(levelname)s - %(message)s")
+sh = logging.StreamHandler()
+sh.setFormatter(log_format_simple)
+logger.addHandler(sh)
+
 
 class CustomSDKSettings(api_settings.ApiSettings):
     """Custom Looker API settings to allow us to initialise with multiple SDK credentials"""
@@ -43,28 +38,7 @@ def init_sdks(args: argparse.Namespace) -> Tuple[Looker40SDK, Looker40SDK]:
     """Set up SDKs"""
     dev_sdk = init_sdk(args.looker_sdk_1)
     prod_sdk = init_sdk(args.looker_sdk_2)
-    if DEBUG:
-        assert(test_envs(dev_sdk, prod_sdk))
     return dev_sdk, prod_sdk
-
-
-def smoke_test_api(client: Looker40SDK) -> None:
-    """Test the API is working by setting a user attribute"""
-    uas = client.all_user_attributes()
-    me = client.me().id
-    target = [u for u in uas if u.name == 'api_test'][0].id
-    value = WriteUserAttributeWithValue(value=f'Attribute updated at {datetime.now()}')
-    client.set_user_attribute_user_value(me, target, value)
-
-
-def test_envs(client1: Looker40SDK, client2: Looker40SDK) -> bool:
-    """Test the API is working by setting a user attribute for both instances"""
-    try:
-        smoke_test_api(client1)
-        smoke_test_api(client2)
-        return True
-    except SDKError as _e:
-        return False
 
 
 def init_sdk(credentials: list):
