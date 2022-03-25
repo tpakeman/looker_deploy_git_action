@@ -31,6 +31,6 @@ jobs:
           ${{ secrets.LOOKER_BASE_URL_1 }} \
           --looker_sdk_2 ${{ secrets.LOOKER_CLIENT_ID_2 }} \
           ${{ secrets.LOOKER_CLIENT_SECRET_2 }} \
-          ${{ secrets.LOOKER_BASE_URL_2 }}
+          ${{ secrets.LOOKER_BASE_URL_2 }} \
           --lookml_folder 13
         # --handle_moved_dashboards
