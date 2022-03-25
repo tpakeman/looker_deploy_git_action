@@ -84,6 +84,10 @@ def diff_lookml_dashboards(client1: Looker40SDK, client2: Looker40SDK, args: arg
         else:
             if to_dash[key] != args.lookml_folder:
                 results['not_in_target'].append((key, to_dash[key])) # Tuple of dash id and folder id
+    if len(results['new']) > 0:
+        logger.info(f'Found {len(results["new"])} new LookML dashboards in instance 1')
+    if len(results['not_in_target']) > 0:
+        logger.info(f'Found {len(results["not_in_target"])} existing dashboards in instance 2 not in target folder')
     return results
 
 
